@@ -1,0 +1,18 @@
+syntax = "proto3";
+package com.grpc.server.borrower;
+
+option java_multiple_files = true;
+
+import "borrower.proto";
+
+service BorrowerService {
+  rpc GetBorrowerById(BorrowerRequest) returns (BorrowerResponse);
+}
+
+service PersonalInfoService {
+  rpc GetPersonalInfo(BorrowerRequest) returns (PersonalInfo);
+}
+
+service CreditInfoService {
+  rpc GetCreditInfo(BorrowerRequest) returns (CreditInfo);
+}

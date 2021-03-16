@@ -1,0 +1,28 @@
+syntax = "proto3";
+package com.grpc.server.borrower;
+
+option java_multiple_files = true;
+
+message BorrowerRequest {
+  int64 id = 1;
+}
+
+message BorrowerResponse {
+  Borrower borrower = 1;
+}
+
+message Borrower {
+  PersonalInfo personalInfo = 1;
+  CreditInfo creditInfo = 2;
+}
+
+message PersonalInfo {
+  string firstName = 2;
+  string midName = 3;
+  string lastName = 4;
+}
+
+message CreditInfo {
+  int64 rub = 1;
+  int64 kop = 2;
+}
